@@ -298,6 +298,10 @@ jobs:
     #   echo "::set-output name=version::$(git branch --show-current | sed 's/-.*//')-$(git rev-parse --short HEAD)"
       if: env.CONTINUE
 
+    - name: Run haskell-language-server
+      run: |
+        haskell-language-server
+
     # XXX intermittent upload failures
     - name: Upload executables artifact
       uses: actions/upload-artifact@v2
